@@ -64,6 +64,6 @@ class BulletinsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def bulletin_params
-      params.require(:bulletin).permit(:title, :description)
+      params.require(:bulletin).permit(:title, :description, :post_type_cd)
     end
 end

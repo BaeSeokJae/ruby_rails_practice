@@ -6,6 +6,18 @@ ruby '2.6.3'
 gem 'bootstrap-sass'
 gem 'simple_form'
 
+gem 'simple_enum', '~> 2.3.0' , require: 'simple_enum/mongoid'
+
+gem 'carrierwave'
+
+gem 'mini_magick'
+
+gem "font-awesome-rails"
+
+gem 'bootstrap_flash_messages'
+
+gem 'acts-as-taggable-on'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 # Use sqlite3 as the database for Active Record

@@ -10,13 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_25_014318) do
+ActiveRecord::Schema.define(version: 2021_05_25_051217) do
 
   create_table "bulletins", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "post_type"
+    t.integer "post_type_cd", default: 0
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "post_id", null: false
+    t.text "body"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -25,8 +35,10 @@ ActiveRecord::Schema.define(version: 2021_05_25_014318) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "bulletin_id"
+    t.string "picture"
     t.index ["bulletin_id"], name: "index_posts_on_bulletin_id"
   end
 
+  add_foreign_key "comments", "posts"
   add_foreign_key "posts", "bulletins"
 end

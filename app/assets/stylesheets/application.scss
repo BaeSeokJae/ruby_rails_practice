@@ -23,6 +23,9 @@ $navbar-default-link-hover-bg: black;
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+@import "comments";
+@import "posts";
 
 body {
   padding-top: 60px;
